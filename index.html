@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style.css" />
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="./style.css" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
@@ -14,17 +14,28 @@
     <title>Newsletter Card Component - FrontendPro Challenge</title>
   </head>
   <body>
-    <!-- Write your HTML here -->
-     <div class="newsletter-container">
+   
+     <div class="newsletter-container" >
        <div class="newsletter-box">
         <div class="newsletter-heading"> Level Up Your Frontend Skills</div>
         <div class="newsletter-body">Sign up for our free newsletter to receive weekly coding challenges that <br>will help you improve your frontend development skills.</div>
-        <div class="email-field"><input type="email" placeholder="Enter your email address!" name="email" id="email" required>
-        <button class="newsletter-button">Subscribe</button></div>
+        <form id="subscribeForm" >
+        <div class="email-field">
+          <div class="mini-field">
+            <input type="text" placeholder="Enter your email address!" name="email" id="email" >
+            <div id="errorMessage" class="error-message">Please include "@" in your email address</div>
+            <div id="successMessage" class="success-message">Thanks for subscribing!</div>
+
+           </div>
+          <button class="newsletter-button">Subscribe</button> 
+        </div>
+       
         <div class="special"><input type="checkbox" name="agreement" id="agreement">
         <label for="agreement"> By checking this box you agree to receive our weekly newsletter containing coding challenges, tips and other <br>related content. You may unsubscribe from the newsletter at any time.</label></div>
+      </form>
        </div>
      </div>
-    <script src="/src/script.js"></script>
+    <script src="script.js" ></script>
   </body>
 </html>
+ 

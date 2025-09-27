@@ -1,29 +1,44 @@
 // write your JavaScript here
-const email = document.getElementById("email");
-email.addEventListener("input", (event) => {
-    if (email.validity.typeMismatch) {
-        email.setcustomValidity("Still expecting an email address!");
-    } else {
-        email.setcustomValidity("");
+const emailInput = document.getElementById("email");
+const myForm = document.getElementById("subscribeForm");
+const errorMessage = document.getElementById("errorMessage");
+const successMessage = document.getElementById("successMessage");
+const submitButton = document.querySelector("newsletter-button"); 
+
+function validateEmail(email) {
+    return email.includes('@');
+}
+
+emailInput.addEventListener('input', function () {
+    const email = this.value;
+
+    if (email.length === 0) {
+        this.classList.remove('valid', 'invalid');
+        errorMessage.classList.remove('show');
+        submitButton.disabled = true;
+    } else if (validateEmail(email)){
+        this.classList.remove('invalid');
+        this.classList.add('valid');
+        errorMessage.classList.remove('show');
+        submitButton.disabled = false;
+    } else{
+        this.classList.remove('valid');
+        this.classList.add('invalid');
+        errorMessage.classList.add('show');
+        submitButton.disabled = true;
     }
+
 });
 
-const button = document.querySelector(".newsletter-button");
-const emailInput = document.querySelector("#email");
+myForm.addEventListener('submit', function(e){
+    e.preventDefault();
 
-button.addEventListener("click", function(){
-    const emailValue = emailInput.value.trim();
+    const email = emailInput.value;
 
-    if (emailValue === "") {
-        message.textContent = "Email is required.";
-        message.stylecolor = "red";
-    } else if
-        (!emailValue.includes("@") || !emailValue.includes(".")) {
-            message.textcontent = "Please enter a valid email address.";
-            message.style.color = "red";
-        } else{
-            message.textContent = "Thanks for subscribing!";
-            message.style.color = "green";
-            emailInput.value = "";
-        }
-});
+    if (validateEmail(email)) {
+        successMessage.style.display = 'block';
+        emailInput.value = "";
+        console.log('Email submitted:', email);
+    }
+}
+)
