@@ -160,7 +160,7 @@ label{
 
    .email-field{
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
    }
 
@@ -225,10 +225,7 @@ label{
    }
 
 .special{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10%;
+  margin-left: 5%;
   
 }
 
@@ -237,9 +234,20 @@ label{
   margin-right: 10%;
 }
 
-.error-message{
-  
 }
 
+@media (max-width: 385px){
+   
+   .email-field{
+    margin-top: 20px;
+    margin-left: 20px;
+   }
+  
+   .newsletter-button{
+    margin-right: 38px;
+   }
 
+   .special{
+      max-width: 950px;
+   }
 }
