@@ -1,10 +1,12 @@
 **NEWSLETTER COMPONENT** 
+
 Newsletter Card Component with an email subscription.
 
 For the live demo: https://marvellous2317.github.io/Newsletter-Card/
 
 
 **Learning**
+
 In this frontend challenge, I learnt how to build a real-world UI component using HTML, CSS and JS. I used CSS Flexbox to lay out the component, make it responsive and I used JS for form validation. 
 
 **Features**
